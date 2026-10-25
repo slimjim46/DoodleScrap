@@ -1,5 +1,6 @@
 import React, { Suspense, lazy, useSyncExternalStore } from 'react'
 import ReactDOM from 'react-dom/client'
+import { Analytics } from '@vercel/analytics/react'
 import App from './App.jsx'
 import { currentPath, subscribeToPath } from './lib/navigation.js'
 import { DAILY_GALLERY_PATH, DAILY_PATH, dailyView } from './daily/dailyRoute.js'
@@ -45,6 +46,7 @@ function Root() {
       ) : (
         <App />
       )}
+      <Analytics />
     </React.StrictMode>
   )
 }
